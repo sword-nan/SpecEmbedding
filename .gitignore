@@ -8,14 +8,12 @@ __pycache__/
 *.tsv
 *.csv
 temp/*
-docs/*
 .pytest_cache/*
 *.tsv
 *.csv
 *.yaml
 tests/*
 checkpoints/*
-docs/*
 test*.py
 *.zarr
 *.tar

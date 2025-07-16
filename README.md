@@ -12,6 +12,8 @@ To ensure a fair and reproducible evaluation, we strictly retained the original 
 
 Details on the hyperparameter search space, training procedure, ablation studies, and full benchmark results across multiple tasks are also available on [figshare](https://doi.org/10.6084/m9.figshare.28876751.v2) for reproducibility and further research.
 
+More details about Evaluation Metrics can be found in [SpecEmbedding-Comparison](https://github.com/sword-nan/SpecEmbedding-Comparison)
+
 ### 1. Environment
 
 OS: Linux Ubuntu 20.04
