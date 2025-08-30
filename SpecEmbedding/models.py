@@ -209,6 +209,13 @@ class SiameseModel(nn.Module):
         x = self.embedding(mz, intensity)
         x = self._encoder(x, src_key_padding_mask=mask)
         # mean pooling or cls position vector
-        x = torch.mean(x, dim=1)
+        extened_mask = mask.unsqueeze(-1)
+        # [batch, seq_len, hidden_size]
+        masked_embeddings: torch.Tensor = x * (~extened_mask)
+        # [batch, hidden_size]
+        sum_embeddings = masked_embeddings.sum(dim=1)
+        # [batch, 1]
+        num_valid_tokens = (~mask).sum(dim=1, keepdim=True)
+        x = sum_embeddings / num_valid_tokens
         x = self._activation(self._decoder(x))
         return x
